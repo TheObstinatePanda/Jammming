@@ -1,0 +1,46 @@
+html {
+    font-family: poppins;
+    background-color: #353434;
+    display: flex;
+    justify-content: center;
+   }
+  
+  body {
+    max-width: 1080px;
+    background-color: rgb(220, 218, 218);
+    padding-top: 1rem;
+  }
+  
+  h1{
+    font-size: 2.36rem;
+    text-align: center;
+  }
+  
+  img {
+    display: flex;
+    margin: 0 auto;
+    align-self: center;
+    max-width: 200px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 15px;
+  }
+
+  .Jamming {
+    display: flex;
+    flex-direction: column;
+  }
+
+ .tracks {
+  display: flex;
+  flex-direction: row;
+  border: solid 1px #ffffff;
+  border-radius: 10px;
+  margin: 0 auto;
+  background-color: grey;
+ }
+ 
+
+  .Playlist {
+    flex-direction: column;  
+  }
