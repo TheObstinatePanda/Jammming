@@ -9,7 +9,7 @@ import "./App.css";
 
 const App =()=>{    
 
-    return (
+      return (
         <div className="Jamming">
             <h1>Jammming with The Obstinate Panda!</h1>
             <img src={logo} alt='panda logo' className="logo" />

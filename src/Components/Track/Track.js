@@ -1,32 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Track.css";
 
 const Track = (props) => {
    
-    const addTrack = () => {
-        props.onAdd(props.track);
-    }
-
-    const removeTrack = () => {
-        props.onRemove(props.track);
-    }
+    let [isRemoval, setIsRemoval] = useState(props.isRemoval);
 
     function takeAction() {
-        if (props.onRemove){
-            return <button className="takeAction">-</button>
+        if (!isRemoval){
+            return <button className="takeAction" onClick={() => setIsRemoval(props.isRemoval)}>-</button>
         } else {
-            return <button className="takeAction">+</button>
+            return <button className="takeAction" onClick={() => setIsRemoval(props.isRemoval)}>+</button>
         }
     }
 
     return (
-       <div className="Track">
+       <div className="Track" isremoval={toString(isRemoval)}>
             <div className="Trackinfo">
                 <h3>{props.trackObject.trackName}</h3>
                 <p>Artist: {props.trackObject.trackArtist}</p>
                 <p className="from">Album: {props.trackObject.trackAlbum}</p>
             </div>
-            {takeAction}
+            {takeAction()}
        </div> 
     )
 }

@@ -19,7 +19,7 @@ const SearchBar = () => {
 
     return (
         <div className="SearchBar">
-            <input placeholder="Enter a Song, Album or Artist"  onChange = {handleSearch}/>
+            <input type="search" placeholder="Enter a Song, Album or Artist"  onChange = {handleSearch}/>
             <button className="SearchButton">Search</button>
         </div>
     )

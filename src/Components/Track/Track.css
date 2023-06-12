@@ -1,7 +1,10 @@
 .Track {
     border-radius: 25px;
-    width: 15rem;
+    width: 100%;
     margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 h3 {
@@ -22,4 +25,18 @@ p {
 
 .Trackinfo {
     font-size: .75rem;
+}
+
+button {
+    border-radius: 50%;
+    font-size: 1.2rem;
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin-top: 1.75rem;
+    justify-self: end;
+}
+
+button:hover{
+    background-color: rgba(250,250, 250, .5);
 }

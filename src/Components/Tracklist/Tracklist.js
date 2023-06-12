@@ -4,12 +4,14 @@ import { Tracks } from '../Tracks/Tracks'
 import Track from '../Track/Track'
 
 const Tracklist = (props) => {
-  
+
     return (
         <div className="Tracklist">
-            {Tracks.map(track => <Track trackObject={track} onAdd={props.addTrack} onRemove={props.removeTrack}/>)}              
+            {Tracks.map(track => <Track key={track.id} trackObject={track} isRemoval={props.isRemoval}/>)}              
         </div>
     )
 }
+
+
 
 export default Tracklist;
