@@ -7,14 +7,14 @@ const Track = (props) => {
 
     function takeAction() {
         if (!isRemoval){
-            return <button className="takeAction" onClick={() => setIsRemoval(props.isRemoval)}>-</button>
+            return <button className="takeAction" onClick={() => setIsRemoval(!isRemoval)}>-</button>
         } else {
-            return <button className="takeAction" onClick={() => setIsRemoval(props.isRemoval)}>+</button>
+            return <button className="takeAction" onClick={() => setIsRemoval(!isRemoval)}>+</button>
         }
     }
 
     return (
-       <div className="Track" isremoval={toString(isRemoval)}>
+       <div className="Track" isremoval={props.isRemoval}>
             <div className="Trackinfo">
                 <h3>{props.trackObject.trackName}</h3>
                 <p>Artist: {props.trackObject.trackArtist}</p>

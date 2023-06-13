@@ -6,7 +6,7 @@ const Playlist = () => {
     return (
         <div className="Playlist">
             <input defaultValue="New Playlist"/>
-            <Tracklist isRemoval={true}/>
+            <Tracklist />
             <button className="savePlaylist">Save to Spotify</button>
         </div>
     )

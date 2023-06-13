@@ -7,7 +7,7 @@ const Tracklist = (props) => {
 
     return (
         <div className="Tracklist">
-            {Tracks.map(track => <Track key={track.id} trackObject={track} isRemoval={props.isRemoval}/>)}              
+            {Tracks.map(track => <Track key={track.id} trackObject={track} />)}              
         </div>
     )
 }
