@@ -3,10 +3,10 @@ import "./Tracklist.css";
 import { Tracks } from '../Tracks/Tracks'
 import Track from '../Track/Track'
 
-const Tracklist = (props) => {
+const Tracklist = () => {
 
     return (
-        <div className="Tracklist">
+        <div className="Tracklist" >
             {Tracks.map(track => <Track key={track.id} trackObject={track} />)}              
         </div>
     )
