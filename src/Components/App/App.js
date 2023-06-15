@@ -9,6 +9,7 @@ import { Tracks } from "../Tracks/Tracks";
 
 const App = () => {
   const [searchResults, setSearchResults] = useState(Tracks);
+  const [playList, setPlayList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   return (
@@ -27,10 +28,16 @@ const App = () => {
 
       <div className="tracks">
         <div className="SearchResults">
-          <SearchResults searchResults={searchResults} isLoading={isLoading} />
+          <SearchResults
+            searchResults={searchResults}
+            setSearchResults={setSearchResults}
+            isLoading={isLoading}
+            playList={playList}
+            setPlayList={setPlayList}
+          />
         </div>
         <div className="Playlist">
-          <Playlist />
+          <Playlist playList={playList} />
         </div>
       </div>
     </div>

@@ -4,53 +4,29 @@ import "./SearchBar.css";
 
 const SearchBar = ({ tracks, setTracks, setIsLoading, isLoading }) => {
   const [input, setInput] = useState("");
+  const tracksFromAPI = () => {
+    return [
+      /*  {
+        id: 4,
+        trackName: "Midnight Revolution",
+        trackArtist: "Black Sabbath",
+        trackAlbum: "Paranoid (Deluxe Edition)",
+        list: "tracklist",
+      },
+      {
+        id: 5,
+        trackName: "Shadow of the Abyss",
+        trackArtist: "Iron Maiden",
+        trackAlbum: "The Number of the Beast",
+        list: "tracklist",
+      }, */
+    ];
+  };
   useEffect(() => {
-    const tracksFromAPI = () => {
-      /*  if (isLoading) {
-        return Promise.resolve([]);
-      }
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          const tracks = [
-            {
-              id: 2,
-              trackName: "Midnight Revolution",
-              trackArtist: "Black Sabbath",
-              trackAlbum: "Paranoid (Deluxe Edition)",
-            },
-            {
-              id: 3,
-              trackName: "Shadow of the Abyss",
-              trackArtist: "Iron Maiden",
-              trackAlbum: "The Number of the Beast",
-            },
-          ];
-          resolve(tracks);
-        }, 1000);
-      }); */
-      return [
-        {
-          id: 2,
-          trackName: "Midnight Revolution",
-          trackArtist: "Black Sabbath",
-          trackAlbum: "Paranoid (Deluxe Edition)",
-        },
-        {
-          id: 3,
-          trackName: "Shadow of the Abyss",
-          trackArtist: "Iron Maiden",
-          trackAlbum: "The Number of the Beast",
-        },
-      ];
-    };
-
-    // Example usage:
-    /*  tracksFromAPI().then((tracks) => {
+    if (isLoading == true) {
       setIsLoading(false);
-      setTracks((prevTracks) => [...prevTracks, ...tracks]);
-    }); */
-    setIsLoading(false);
-    setTracks((prevTracks) => [...prevTracks, ...tracksFromAPI()]);
+      setTracks((prevTracks) => [...prevTracks, ...tracksFromAPI()]);
+    }
   }, []);
 
   const handleSearch = (e) => {
