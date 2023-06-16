@@ -34,7 +34,7 @@ const Playlist = (
                     />)
                     
             })}
-            {console.log("setPlaylist :" + setPlaylist)}
+            {/*console.log("setPlaylist :" + setPlaylist)*/}
             {/*console.log(Track)*/}
 
             <p>'Add a track to the playlist!'</p>

@@ -5,9 +5,11 @@ import Track from '../Track/Track';
 import "./SearchResults.css"
 
 
-const SearchResults = ({searchResults, isLoading, setPlaylist, setSearchResults, isRemoval, setIsRemoval}) => {
+const SearchResults = ({searchResults, isLoading, setPlaylist, setSearchResults, isRemoval, setIsRemoval, query}) => {
     
     if (isLoading === true) return <h3>Loading...</h3>;
+
+    
 
     function moveToPlaylist(trackObject) {
         setSearchResults(() =>
@@ -16,11 +18,20 @@ const SearchResults = ({searchResults, isLoading, setPlaylist, setSearchResults,
         setPlaylist((prevState) => [...prevState, trackObject])
     }
 
+    /*function filteredTracks(trackObject) {
+         trackObject.toLowerCase().hasOwnProperty(query.toLowerCase())
+    }*/
+
+    /*const filteredTracks = useMemo(() => {
+        return searchResults.filter(trackObject => {
+            return trackObject.toLowerCase().includes(query.toLowerCase())
+    })*/
+
     
     return(
         <div className="SearchResults">
             <h2>Results</h2>
-
+            {/*console.log(filteredTracks)*/}
             {searchResults.map((track) => {
                 return (
                     <Track 
@@ -32,7 +43,7 @@ const SearchResults = ({searchResults, isLoading, setPlaylist, setSearchResults,
                     />
                 );
             })}  
-            {console.log("setSearch :" + setSearchResults)}          
+            {/*console.log("setSearch :" + setSearchResults)*/}          
         </div>
     )
 }
