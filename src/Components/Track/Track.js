@@ -1,24 +1,38 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Track.css";
 
-const Track = (props) => {
+const Track = ({playlist, moveToPlaylist, moveToSearchResults, trackObject, key}) => {
    
-    let [isRemoval, setIsRemoval] = useState(props.isRemoval);
-
     function takeAction() {
-        if (!isRemoval){
-            return <button className="takeAction" onClick={() => setIsRemoval(!isRemoval)}>-</button>
+       // console.log(playlist)
+        if (playlist.includes(trackObject)) {
+            return <button 
+                className="takeAction" 
+                onClick={() => {
+                    moveToSearchResults(trackObject)
+                }}>-</button>
         } else {
-            return <button className="takeAction" onClick={() => setIsRemoval(!isRemoval)}>+</button>
-        }
-    }
+            return (
+                <button
+                  className="takeAction"
+                  onClick={() => {
+                    //console.log(trackObject.id);
+        
+                    moveToPlaylist(trackObject);
+                  }}
+                >
+                  +
+                </button>
+              );
+            }
+          }
 
     return (
-       <div className="Track" isremoval={props.isRemoval}>
-            <div className="Trackinfo">
-                <h3>{props.trackObject.trackName}</h3>
-                <p>Artist: {props.trackObject.trackArtist}</p>
-                <p className="from">Album: {props.trackObject.trackAlbum}</p>
+       <div className="Track" key={trackObject.id}>
+            <div className="Trackinfo" key={key}>
+                <h3>{trackObject.trackName}</h3>
+                <p>Artist: {trackObject.trackArtist}</p>
+                <p className="from">Album: {trackObject.trackAlbum}</p>
             </div>
             {takeAction()}
        </div> 

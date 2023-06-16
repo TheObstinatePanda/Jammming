@@ -1,25 +1,31 @@
-import React, { useState } from "react";
-import { Tracks } from '../Tracks/Tracks'
+import React, { useState, useEffect } from "react";
+//import { Tracks } from '../Tracks/Tracks'
 import "./SearchBar.css"
 
 
-const SearchBar = () => {
+const SearchBar = ({tracks, setTracks, setIsLoading, isLoading}) => {
     const [input, setInput] = useState("");
+    
+    useEffect(() => {
+        if (isLoading === true) {
+            setIsLoading(false);
+            setTracks((prevTracks) => [...prevTracks])
+        }
+    }, [])
 
     const handleSearch = (e) => {
         e.preventDefault();
         setInput(e.target.value);
     };
 
-    if (input.length > 0) {
-        Tracks.filter((track) => {
-            return track.trackName.match(input)
-        });
-    }
-
-    return (
+     return (
         <div className="SearchBar">
-            <input type="search" placeholder="Enter a Song, Album or Artist"  onChange = {handleSearch}/>
+            {/*console.log(tracks)*/}
+            <input 
+                type="search" 
+                placeholder="Enter a Song, Album or Artist"  
+                onChange = {handleSearch}
+            />
             <button className="SearchButton">Search</button>
         </div>
     )
