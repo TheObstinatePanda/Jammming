@@ -11,7 +11,7 @@ const SearchBar = ({tracks, setTracks, setIsLoading, isLoading}) => {
             setIsLoading(false);
             setTracks((prevTracks) => [...prevTracks])
         }
-    }, [])
+    })
 
     const handleSearch = (e) => {
         e.preventDefault();

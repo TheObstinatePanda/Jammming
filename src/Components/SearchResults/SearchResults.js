@@ -5,7 +5,7 @@ import Track from '../Track/Track';
 import "./SearchResults.css"
 
 
-const SearchResults = ({searchResults, isLoading, setPlaylist, setSearchResults,}) => {
+const SearchResults = ({searchResults, isLoading, setPlaylist, setSearchResults, isRemoval, setIsRemoval}) => {
     
     if (isLoading === true) return <h3>Loading...</h3>;
 
@@ -25,8 +25,9 @@ const SearchResults = ({searchResults, isLoading, setPlaylist, setSearchResults,
                     <Track 
                         key={track.id}
                         trackObject={track}
-                        isRemoval={true}
                         moveToPlaylist={moveToPlaylist}
+                        isRemoval={isRemoval}
+                        setIsRemoval={setIsRemoval}
                     />
                 );
             })}            

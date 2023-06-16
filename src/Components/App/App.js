@@ -12,6 +12,7 @@ const App =()=>{
     const [searchResults, setSearchResults] = useState(Tracks);
     const [playlist, setPlaylist] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [isRemoval, setIsRemoval] = useState(true)
 
       return (
         <div className="Jamming">
@@ -35,6 +36,8 @@ const App =()=>{
                         isLoading={isLoading}
                         playlist={playlist}
                         setPlaylist={setPlaylist}
+                        isRemoval={isRemoval}
+                        setIsRemoval={setIsRemoval}
                     />
                 </div>    
                 <div className="Playlist">    

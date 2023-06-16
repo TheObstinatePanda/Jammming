@@ -1,15 +1,16 @@
 import React from "react";
 import "./Track.css";
 
-const Track = ({playlist, moveToPlaylist, moveToSearchResults, trackObject, key}) => {
+const Track = ({isRemoval, setIsRemoval, moveToPlaylist, moveToSearchResults, trackObject, key}) => {
    
     function takeAction() {
        // console.log(playlist)
-        if (playlist.includes(trackObject)) {
+        if (!isRemoval) {
             return <button 
                 className="takeAction" 
                 onClick={() => {
                     moveToSearchResults(trackObject)
+                    trackObject.setIsRemoval=!isRemoval
                 }}>-</button>
         } else {
             return (
@@ -19,6 +20,7 @@ const Track = ({playlist, moveToPlaylist, moveToSearchResults, trackObject, key}
                     //console.log(trackObject.id);
         
                     moveToPlaylist(trackObject);
+                    trackObject.setIsRemoval = !isRemoval
                   }}
                 >
                   +

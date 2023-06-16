@@ -4,7 +4,8 @@ import React from "react";
 import Track from '../Track/Track';
 import "./Playlist.css"
 
-const Playlist = (props, {searchResults, setSearchResults, setPlaylist, playlist}) => {
+const Playlist = (props,
+     {setSearchResults, setPlaylist, playlist}) => {
     
     function moveToSearchResults(trackObject) {
         setPlaylist(() =>
