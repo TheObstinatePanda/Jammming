@@ -15,6 +15,7 @@ const SearchResults = ({searchResults, isLoading, setPlaylist, setSearchResults,
         );
         setPlaylist((prevState) => [...prevState, trackObject])
     }
+
     
     return(
         <div className="SearchResults">
@@ -30,7 +31,8 @@ const SearchResults = ({searchResults, isLoading, setPlaylist, setSearchResults,
                         setIsRemoval={setIsRemoval}
                     />
                 );
-            })}            
+            })}  
+            {console.log("setSearch :" + setSearchResults)}          
         </div>
     )
 }

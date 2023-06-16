@@ -4,8 +4,8 @@ import React from "react";
 import Track from '../Track/Track';
 import "./Playlist.css"
 
-const Playlist = (props,
-     {setSearchResults, setPlaylist, playlist}) => {
+const Playlist = (
+     {setSearchResults, setPlaylist, playlist, isRemoval, setIsRemoval}) => {
     
     function moveToSearchResults(trackObject) {
         setPlaylist(() =>
@@ -14,18 +14,27 @@ const Playlist = (props,
         setSearchResults((prevState) => [...prevState, trackObject])
     }
 
+    // function removeTrack (id) {
+    //     setPlaylist(currentTrack => {
+    //         return currentTrack.filter(track => track.id !== id)
+    //     })
+    // }
+
     return (
         <div className="Playlist">
             <input defaultValue="New Playlist"/>
-            {props.playlist.map((track) => {
-                return <Track 
-                    key={track.id}
-                    trackObject={track} 
-                    isRemoval={false}
-                    moveToSearchResults={moveToSearchResults}
-                    />
+            {playlist.map((track) => {
+                return (
+                    <Track 
+                        key={track.id}
+                        trackObject={track} 
+                        moveToSearchResults={moveToSearchResults}
+                        isRemoval={false}
+                        setIsRemoval={setIsRemoval}
+                    />)
+                    
             })}
-            
+            {console.log("setPlaylist :" + setPlaylist)}
             {/*console.log(Track)*/}
 
             <p>'Add a track to the playlist!'</p>

@@ -41,8 +41,14 @@ const App =()=>{
                     />
                 </div>    
                 <div className="Playlist">    
-                    <Playlist playlist={playlist}/>
+                    <Playlist 
+                        playlist={playlist}
+                        setPlaylist={setPlaylist}
+                        searchResults={searchResults}
+                        setSearchResults={setSearchResults}
+                    />
                     {console.log(playlist)}
+                    
                 </div>
             </div>
         </div>
