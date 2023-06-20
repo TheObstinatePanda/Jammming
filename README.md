@@ -3,6 +3,17 @@
 *This is a project from the CodeCademy Full Stack career path.*
 **NOTE** *The initial realease of this project is not finished, some features are not working at time of release*
 
+
+## Known Issues :
+
+* Search only searches for Artists and returns albums. During learning about how the spotify API calls after I feel like I could do a better job building a new app from the ground up rather than altering this one.
+* Some searchs will throw errors, I have only gotten this when trying to search the song "Back in the u.s.s.r." by the Beatles. This only occurred while the punctuation was in place. As a note, punctuation does not normally pose an issue.
+* The search results do not clear after you clear the search bar.
+* Removing an item from the playlist will add it to the results even if the results include a different artist's albums.
+* The 'Save to Spotify' button does nothing - this is intentional as I do not want to add new playlists to my account this way.
+
+*If you have feedback feel free to create a fork and add notes. I can't promise I will alter this app but I wil take those along with my lessons learned on my future projects*
+
 ## Features: 
 
 A search feature that will gather songs/albums/artists from spotify and allow a user to create a custom playlist and then save that to spotify for future use.
