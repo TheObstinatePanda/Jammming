@@ -12,7 +12,7 @@ export const Tracks = [
         trackAlbum: 'Renaissance'
     },
     {
-        id:3,
+        id: 3,
         trackName: 'Thunder',
         trackArtist: 'Imagine Dragons',
         trackAlbum: 'Evolve',

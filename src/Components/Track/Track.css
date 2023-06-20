@@ -11,12 +11,28 @@ h3 {
     margin-bottom:0;
 }
 
+#albumart {
+   width: 73.99px;
+   height: 73.99px; 
+}
+
+#artist {
+    font-weight: bold;
+    max-width: 137.982px;
+}
+.from {
+    font-size: .75rem;
+    width: 137.982px;
+    
+}
+
 p {
-    padding-left: 1.5rem;
+    padding-right: .25rem;
     padding-top: 0;
     padding-bottom: 0;
     margin: 0;
 }
+
 .Track h3:hover{
     background-color: rgba(250,250, 250, .25);
     border-radius: 10px;
@@ -24,13 +40,13 @@ p {
 }
 
 .Trackinfo {
-    font-size: .75rem;
+    font-size: 1rem;
 }
 
 button {
     border-radius: 50%;
     font-size: 1.2rem;
-    width: 30px;
+    min-width: 30px;
     height: 30px;
     border: none;
     margin-top: 1.75rem;

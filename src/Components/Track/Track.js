@@ -30,13 +30,15 @@ const Track = ({isRemoval, setIsRemoval, moveToPlaylist, moveToSearchResults, tr
           }
 
     return (
-       <div className="Track" key={trackObject.id}>
+       <div className="Track" key={trackObject.name}>
+        <img src={trackObject.images[2].url} alt="album art" id="albumart"/>
             <div className="Trackinfo" key={key}>
-                <h3>{trackObject.trackName}</h3>
-                <p>Artist: {trackObject.trackArtist}</p>
-                <p className="from">Album: {trackObject.trackAlbum}</p>
+              
+              <p id="artist">{trackObject.artists[0].name}</p>
+              <p className="from">Album: {trackObject.name}</p>
             </div>
             {takeAction()}
+            {/*console.log("trackobject " + trackObject.name)*/}
        </div> 
     )
 }

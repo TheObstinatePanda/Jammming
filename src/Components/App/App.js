@@ -3,17 +3,19 @@ import SearchBar from  "../SearchBar/SearchBar"
 import SearchResults from "../SearchResults/SearchResults"
 import Playlist from "../Playlist/Playlist"
 import logo from "./jammingpanda.png"
-import { Tracks } from "../Tracks/Tracks"
 
 import "./App.css";
 
 const App =()=>{    
 
-    const [searchResults, setSearchResults] = useState(Tracks);
+    const [searchResults, setSearchResults] = useState([]);
     const [playlist, setPlaylist] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isRemoval, setIsRemoval] = useState(true)
     const [query, setQuery] = useState("");
+
+  
+
 
       return (
         <div className="Jamming">
@@ -22,8 +24,8 @@ const App =()=>{
             
             <div className="App">    
                     <SearchBar
-                        tracks={searchResults}
-                        setTracks={setSearchResults}
+                        searchResults={searchResults}
+                        setSearchResults={setSearchResults}
                         setIsLoading={setIsLoading}
                         isLoading={isLoading}
                         query={query}
@@ -51,7 +53,7 @@ const App =()=>{
                         searchResults={searchResults}
                         setSearchResults={setSearchResults}
                     />
-                    {console.log(playlist)}
+                    {/*console.log(playlist)*/}
                     
                 </div>
             </div>
