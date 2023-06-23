@@ -2,25 +2,25 @@ import React, {useState, useEffect } from "react";
 //import { Tracks } from '../Tracks/Tracks'
 import "./SearchBar.css"
 
-const CLIENT_ID = "80192168f86e44f4a0c7161050cf7e85";
-const CLIENT_SECRET = "7de9310e2ccb451fa3f2d24b30262686";
+const { REACT_APP_CLIENT_ID, REACT_APP_CLIENT_SECRET} = process.env
 
 const SearchBar = ( { searchResults, setSearchResults, setIsLoading, isLoading, query, setQuery } ) => {
     const [accessToken, setAccessToken] = useState("");
-    
     
 
     useEffect(() => {
         
         // API Access Token
-
         let authParameters = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
-            body: 'grant_type=client_credentials&client_id=' + CLIENT_ID + '&client_secret=' +CLIENT_SECRET
+            body: 'grant_type=client_credentials&client_id=' + REACT_APP_CLIENT_ID + '&client_secret=' +REACT_APP_CLIENT_SECRET
         }
+
+        console.log('Auth parameters ' + authParameters.body)
+
         fetch('https://accounts.spotify.com/api/token', authParameters)
             .then(result => result.json())
             .then(data => setAccessToken(data.access_token))
